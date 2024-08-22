@@ -1,0 +1,7 @@
+.file-upload {
+  margin-top: 10px;
+}
+
+.file-upload input[type="file"] {
+  width: 100%;
+}

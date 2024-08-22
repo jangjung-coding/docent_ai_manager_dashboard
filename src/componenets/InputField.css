@@ -1,0 +1,34 @@
+.input-field {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.input-field label {
+  width: 200px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-grow: 1;
+}
+
+.input-wrapper input {
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.input-wrapper input:last-child {
+  margin-right: 0;
+}
+
+.input-wrapper input[placeholder=""] {
+  width: auto;
+  flex: 1;
+}

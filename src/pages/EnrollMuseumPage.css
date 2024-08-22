@@ -1,0 +1,154 @@
+.exhibition-list {
+  width: 80%;
+  padding: 4%;
+  margin: 50px auto;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 테이블 스타일 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+th {
+  background-color: #e8e8e8;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+}
+
+td {
+  background-color: #ffffff;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+input[type="text"] {
+  width: 95%;
+  padding: 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #5a5a5a;
+  box-shadow: 0 0 8px rgba(90, 90, 90, 0.2);
+  outline: none;
+}
+
+/* 버튼 스타일 */
+.add-exhibition,
+.register-button {
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+
+.add-exhibition {
+  background-color: #FFE8E8;
+  color: rgb(0, 0, 0);
+}
+
+.add-exhibition:hover {
+  color: rgb(255, 255, 255);
+  background-color: #350034;
+  transform: scale(1.05);
+}
+
+.register-button {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+.register-button:hover {
+  background-color: #3b75b1;
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background-color: #d9534f;
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #b52e2a;
+  transform: scale(1.05);
+}
+
+/* EnrollPaintingPage.css */
+.artwork-form {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.remove-artwork-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  line-height: 0; /* Remove line height to center the 'X' */
+}
+
+.remove-artwork-button::before {
+  content: '×'; /* Unicode for multiplication sign */
+  font-size: 16px;
+  line-height: 24px; /* Align the 'X' vertically */
+  color: white;
+}
+
+.remove-artwork-button:hover {
+  background-color: #d33;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .exhibition-list {
+    padding: 5%;
+    width: 90%;
+  }
+
+  th, td {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+}
+

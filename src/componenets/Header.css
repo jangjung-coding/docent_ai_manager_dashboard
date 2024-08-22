@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+}
+
+.header-links {
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.header-links span {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header-title {
+  font-size: 40px;
+  letter-spacing: -0.37px;
+  font-family: 'Abhaya Libre ExtraBold', serif;
+  color: #350034;
+  text-align: center;
+  flex-grow: 1;
+  margin-top: 2.5%;
+  cursor: pointer;
+}

@@ -1,0 +1,27 @@
+.signup-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.signup-form h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #ffe4e1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #fccdc8;
+  transition: all 0.3s;
+}
