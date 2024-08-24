@@ -1,5 +1,3 @@
-// 통신하세요
-
 import React, { useState } from 'react';
 import './EnrollPaintingPage.css';
 import HeaderLinks from '../componenets/HeaderLinks';
@@ -43,26 +41,28 @@ const ExhibitionForm = () => {
   };
 
   // 폼 제출 핸들러: "완료" 버튼을 누르면 호출됨
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const data = new FormData();
     Object.keys(formData).forEach((key) => {
       data.append(key, formData[key]); // formData의 모든 데이터를 FormData 객체에 추가
     });
 
-    fetch('/api/upload', {
-      method: 'POST',
-      body: data, // 서버로 데이터 전송
-    })
-      .then((response) => {
-        if (response.ok) { // 응답이 성공적일 경우
-          setShowPopup(true); // 팝업창 표시
-        } else {
-          console.error('Failed to upload:', response);
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error); // 오류 처리
+    try {
+      const response = await fetch('https://kdocent.kro.kr/dleornjs/db/user_login.php', {
+        method: 'POST',
+        body: data, // 서버로 데이터 전송
       });
+
+      if (response.ok) { // 응답이 성공적일 경우
+        const result = await response.json(); // JSON 응답을 파싱
+        console.log(result);
+        setShowPopup(true); // 팝업창 표시
+      } else {
+        console.error('Failed to upload:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error:', error); // 오류 처리
+    }
   };
 
   // "확인" 버튼 핸들러: 팝업창에서 호출되어 페이지 이동
@@ -112,87 +112,3 @@ const ExhibitionForm = () => {
 };
 
 export default ExhibitionForm;
-
-
-// const ExhibitionForm = () => {
-//   const [artworks, setArtworks] = useState([{ id: 1 }]);
-//   const [formData, setFormData] = useState({});
-
-//   const handleFileUpload = (event, index) => {
-//     const file = event.target.files[0];
-//     setFormData((prevFormData) => ({
-//       ...prevFormData,
-//       [`file_${index}`]: file,
-//     }));
-//   };
-
-//   const handleInputChange = (event) => {
-//     const { name, value } = event.target;
-//     setFormData((prevFormData) => ({
-//       ...prevFormData,
-//       [name]: value,
-//     }));
-//     console.log(formData)
-//   };
-
-//   const handleAddArtwork = () => {
-//     setArtworks((prevArtworks) => [
-//       ...prevArtworks,
-//       { id: prevArtworks.length + 1 },
-//     ]);
-//   };
-
-//   const handleRemoveArtwork = (index) => {
-//     setArtworks((prevArtworks) => prevArtworks.filter((_, i) => i !== index));
-//   };
-
-//   const handleSubmit = () => {
-//     const data = new FormData();
-//     Object.keys(formData).forEach((key) => {
-//       data.append(key, formData[key]);
-//     });
-
-//     fetch('/api/upload', {
-//       method: 'POST',
-//       body: data,
-//     })
-//       .then((response) => {
-//         console.log('Success:', response);
-//       })
-//       .catch((error) => {
-//         console.error('Error:', error);
-//       });
-//   };
-
-//   return (
-//     <div>
-//       <HeaderLinks />
-//       <div className="exhibition-form">
-//         <h2>작품 정보</h2>
-//         {artworks.map((artwork, index) => (
-//           <ArtworkForm
-//             key={artwork.id}
-//             index={index}
-//             onFileUpload={handleFileUpload}
-//             onInputChange={handleInputChange}
-//             onRemoveArtwork={handleRemoveArtwork}
-//           />
-//         ))}
-//         <button type="button" onClick={handleAddArtwork}>
-//           작품 추가하기
-//         </button>
-
-//         <div className="map-upload-section">
-//           <h2>전시회 지도</h2>
-//           <FileUpload onFileUpload={(e) => handleFileUpload(e, 'map')} />
-//         </div>
-
-//         <button type="button" onClick={handleSubmit}>
-//           완료
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ExhibitionForm;
