@@ -1,6 +1,6 @@
 # PEŘCENT - Interactive AI Docent Based on Artist Persona
 
-![PEŘCENT Logo](./src/images/monarisa.png)
+![PEŘCENT Logo](./src/imgs/회원가입.png)
 
 ## 🖼️ Overview
 
