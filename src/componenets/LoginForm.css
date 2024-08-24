@@ -23,7 +23,8 @@
 }
 
 .submit-button:hover{
-  background-color: #fccdc8;
+  color: rgb(255, 255, 255);
+  background-color: #350034;
   transition: all 0.3s;
 }
 
@@ -33,7 +34,7 @@
 }
 
 .signup-button:hover{
-  background-color: #cfcfcf;
+  background-color: #535353;
   transition: all 0.3s;
 }
 
