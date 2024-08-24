@@ -67,7 +67,7 @@ const ExhibitionForm = () => {
 
   // "확인" 버튼 핸들러: 팝업창에서 호출되어 페이지 이동
   const handleConfirm = () => {
-    window.location.href = '/enrollmuseumPage'; // /enrollmuseumPage로 이동
+    window.location.href = '/enrollMuseum'; // /enrollmuseumPage로 이동
   };
 
   return (
